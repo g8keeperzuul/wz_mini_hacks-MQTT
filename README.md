@@ -17,7 +17,7 @@ The [Xiaomi-Dafang-Hacks project](https://github.com/EliasKotlyar/Xiaomi-Dafang-
 
 ## Steps
 1. Determine the IP of the camera and verify that you can open a secure shell (ssh). Generally a good idea to ensure that this IP remains stable (either statically assigned or permanent DHCP lease)
-2. Download this project
+2. Download this project and make your personal modifications to mosquitto.conf
 3. Run install.sh \<camera-ip\>. This script will upload the MQTT client and custom Home Assistant integration scripts and binaries to the camera and run a camera-local setup script. The camera will automatically reboot when complete.
 4. Verify you can see new MQTT messages on the broker. 
 5. Verify you can see a new camera device in Home Assistant. During the boot process, the camera will send Home Assistant compatible MQTT auto-discovery messages so that the camera should appear immediately in Home Assistant (under Settings \> Devices). 
