@@ -31,11 +31,12 @@ case "$1" in
         mkdaemon 0 mqtt-autodiscovery /media/mmc/mosquitto/bin/mqtt-autodiscovery.sh
         mkdaemon 0 mqtt-control /media/mmc/mosquitto/bin/mqtt-control.sh
         mkdaemon 0 mqtt-status /media/mmc/mosquitto/bin/mqtt-status.sh
+        mkdaemon 0 mqtt-motion /media/mmc/mosquitto/bin/mqtt-motion.sh
 		;;
     stop)
         echo "Stopping $(basename "$0")..."
         # mqtt-autodiscovery.sh is not a daemon; it just runs once-and-done. 
-        kill -s SIGTERM $(pgrep "mosquitto_sub|mqtt-status.sh|mqtt-control.sh")
+        kill -s SIGTERM $(pgrep "mosquitto_sub|mqtt-status.sh|mqtt-control.sh|mqtt-motion.sh")
         ;;
     restart)
         $0 stop
