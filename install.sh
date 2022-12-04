@@ -16,10 +16,10 @@ WYZECAMV3_HOST=$1
 
 echo "Uploading MQTT client to camera at ${WYZECAMV3_HOST}..."
 ssh root@${WYZECAMV3_HOST} 'mkdir -p /media/mmc/mosquitto/bin; mkdir -p /media/mmc/mosquitto/lib; mkdir -p /media/mmc/mosquitto/installer'
-scp ./installer/* root@${WYZECAMV3_HOST}:/media/mmc/mosquitto/installer
-scp ./bin/* root@${WYZECAMV3_HOST}:/media/mmc/mosquitto/bin
-scp ./lib/* root@${WYZECAMV3_HOST}:/media/mmc/mosquitto/lib
-scp mosquitto.conf root@${WYZECAMV3_HOST}:/media/mmc/mosquitto
+scp -O ./installer/* root@${WYZECAMV3_HOST}:/media/mmc/mosquitto/installer
+scp -O ./bin/* root@${WYZECAMV3_HOST}:/media/mmc/mosquitto/bin
+scp -O ./lib/* root@${WYZECAMV3_HOST}:/media/mmc/mosquitto/lib
+scp -O mosquitto.conf root@${WYZECAMV3_HOST}:/media/mmc/mosquitto
 
 echo "Installing MQTT client on camera..."
 ssh root@${WYZECAMV3_HOST} '/media/mmc/mosquitto/installer/setup.sh'
