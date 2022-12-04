@@ -68,3 +68,6 @@ mqtt_publish "${DISCOVERY_PREFIX}/sensor/${NODE_ID}/rtsp_server-channel1-url/con
 mqtt_publish "${DISCOVERY_PREFIX}/sensor/${NODE_ID}/rtsp_server-channel2-url/config" "{\"name\": \"${NODE_ID} RTSP Channel 2 URL\", \"unique_id\": \"${NODE_ID}-rtsp-channel2-url\", \"device\": ${DEVICE_JSON}, \"icon\": \"mdi:web\", \"state_topic\": \"${TOPIC_BASE}/rtsp_server/channel2/url\", \"entity_category\": \"diagnostic\"}"
 mqtt_publish "${DISCOVERY_PREFIX}/sensor/${NODE_ID}/rtsp_server-channel1-fps/config" "{\"name\": \"${NODE_ID} RTSP Channel 1 FPS\", \"unique_id\": \"${NODE_ID}-rtsp-channel1-fps\", \"device\": ${DEVICE_JSON}, \"icon\": \"mdi:filmstrip\", \"state_topic\": \"${TOPIC_BASE}/rtsp_server/channel1/fps\", \"entity_category\": \"diagnostic\"}"
 mqtt_publish "${DISCOVERY_PREFIX}/sensor/${NODE_ID}/rtsp_server-channel2-fps/config" "{\"name\": \"${NODE_ID} RTSP Channel 2 FPS\", \"unique_id\": \"${NODE_ID}-rtsp-channel2-fps\", \"device\": ${DEVICE_JSON}, \"icon\": \"mdi:filmstrip\", \"state_topic\": \"${TOPIC_BASE}/rtsp_server/channel2/fps\", \"entity_category\": \"diagnostic\"}"
+
+# Motion
+mqtt_publish "${DISCOVERY_PREFIX}/binary_sensor/${NODE_ID}/motion/config" "{\"name\": \"${NODE_ID} Motion Detected\", \"unique_id\": \"${NODE_ID}-motion-detected\", \"device\": ${DEVICE_JSON}, \"device_class\": \"motion\", \"state_topic\": \"${TOPIC_BASE}/motion/detected\"}"
